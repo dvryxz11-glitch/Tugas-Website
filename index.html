@@ -1,0 +1,938 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ALL EYES ON KARHUTLA</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --dark: #171816;
+    --cream: #eeeae0;
+    --red: #c93b28;
+    --orange: #e87535;
+    --gray: #a4a49a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--cream);
+    color: var(--dark);
+    font-family: 'DM Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* NAVBAR */
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+    color: white;
+}
+
+.logo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 23px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #e87535;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.nav-links a {
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #ddd;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: var(--orange);
+}
+
+.nav-button {
+    border: 1px solid #ffffff70;
+    padding: 11px 18px;
+    border-radius: 3px;
+}
+
+/* HERO */
+
+.hero {
+    height: 760px;
+    min-height: 650px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 120px 7% 70px;
+    color: white;
+    background:
+    linear-gradient(90deg, rgba(13,15,13,.94), rgba(13,15,13,.55), rgba(13,15,13,.2)),
+    linear-gradient(0deg, rgba(13,15,13,.65), transparent 60%),
+    url('https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=2000&q=85') center/cover;
+    overflow: hidden;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--red);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 850px;
+    animation: appear 1s ease;
+}
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #e87535;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 25px;
+}
+
+.eyebrow::before {
+    content: "";
+    width: 35px;
+    height: 2px;
+    background: var(--red);
+}
+
+.hero h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(65px, 10vw, 125px);
+    line-height: .95;
+    font-weight: 600;
+    letter-spacing: -3px;
+}
+
+.hero h1 span {
+    color: #dc5637;
+}
+
+.hero-description {
+    margin-top: 30px;
+    max-width: 470px;
+    font-size: 14px;
+    line-height: 1.9;
+    color: #d0d0c8;
+}
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.primary-btn {
+    background: var(--red);
+    color: white;
+    padding: 16px 25px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: .3s;
+}
+
+.primary-btn:hover {
+    background: var(--orange);
+    transform: translateY(-4px);
+}
+
+.text-link {
+    font-size: 12px;
+    color: white;
+    border-bottom: 1px solid #ffffff70;
+    padding-bottom: 5px;
+}
+
+.hero-index {
+    position: absolute;
+    right: 7%;
+    bottom: 65px;
+    color: #ffffff90;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+/* TICKER */
+
+.ticker {
+    background: var(--red);
+    color: white;
+    overflow: hidden;
+    padding: 15px 0;
+}
+
+.ticker-track {
+    display: flex;
+    width: max-content;
+    animation: ticker 25s linear infinite;
+}
+
+.ticker-item {
+    padding: 0 35px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 19px;
+    letter-spacing: 2px;
+    white-space: nowrap;
+}
+
+/* INTRO */
+
+.intro {
+    padding: 120px 9%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.section-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--red);
+    font-weight: 800;
+    margin-bottom: 22px;
+}
+
+.intro h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(40px, 5vw, 65px);
+    line-height: 1.1;
+    font-weight: 500;
+}
+
+.intro h2 span {
+    color: var(--red);
+}
+
+.intro-text {
+    font-size: 14px;
+    line-height: 2;
+    color: #65665e;
+}
+
+.intro-text p + p {
+    margin-top: 20px;
+}
+
+.intro-note {
+    margin-top: 30px;
+    border-left: 3px solid var(--red);
+    padding: 12px 20px;
+    color: var(--dark);
+    font-weight: 700;
+    font-size: 13px;
+}
+
+/* IMAGE SECTION */
+
+.visual-section {
+    padding: 0 7% 110px;
+}
+
+.visual-image {
+    height: 500px;
+    position: relative;
+    background:
+    linear-gradient(0deg, #171816b0, transparent 70%),
+    url('https://images.unsplash.com/photo-1473448912268-2022ce9509d8?auto=format&fit=crop&w=1800&q=85') center 55%/cover;
+}
+
+.image-caption {
+    position: absolute;
+    left: 40px;
+    bottom: 35px;
+    color: white;
+}
+
+.image-caption span {
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: #ff9a68;
+}
+
+.image-caption h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 38px;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+/* CAUSES */
+
+.causes {
+    background: var(--dark);
+    color: var(--cream);
+    padding: 100px 9%;
+}
+
+.causes-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    margin-bottom: 55px;
+    gap: 30px;
+}
+
+.causes-header h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 55px;
+    line-height: 1;
+    font-weight: 500;
+}
+
+.causes-header p {
+    max-width: 330px;
+    color: #a7a79e;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.cause-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid #ffffff35;
+}
+
+.cause-card {
+    padding: 35px 25px 25px 0;
+    border-right: 1px solid #ffffff25;
+    transition: .3s;
+}
+
+.cause-card:not(:first-child) {
+    padding-left: 25px;
+}
+
+.cause-card:last-child {
+    border-right: none;
+}
+
+.cause-number {
+    color: var(--orange);
+    font-family: 'Oswald', sans-serif;
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+
+.cause-card h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.cause-card p {
+    color: #a7a79e;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+/* IMPACT */
+
+.impact {
+    padding: 110px 9%;
+}
+
+.impact-heading {
+    margin-bottom: 50px;
+}
+
+.impact-heading h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 55px;
+    font-weight: 500;
+}
+
+.impact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.impact-image {
+    height: 470px;
+    background:
+    url('https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1000&q=85') center/cover;
+}
+
+.impact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.impact-item {
+    border-bottom: 1px solid #c9c5ba;
+    padding-bottom: 22px;
+}
+
+.impact-item h3 {
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.impact-item p {
+    color: #77786e;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+/* ACTION */
+
+.action {
+    background: #b83225;
+    color: white;
+    padding: 100px 9%;
+    text-align: center;
+}
+
+.action small {
+    letter-spacing: 3px;
+    font-size: 11px;
+    color: #ffd0bb;
+}
+
+.action h2 {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(45px, 7vw, 85px);
+    line-height: 1.05;
+    font-weight: 500;
+    margin: 25px auto;
+    max-width: 800px;
+}
+
+.action p {
+    max-width: 550px;
+    margin: auto;
+    color: #f4d5cc;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.action a {
+    display: inline-block;
+    background: var(--cream);
+    color: var(--dark);
+    padding: 16px 27px;
+    margin-top: 35px;
+    font-size: 12px;
+    font-weight: 800;
+    transition: .3s;
+}
+
+.action a:hover {
+    background: var(--dark);
+    color: white;
+    transform: translateY(-4px);
+}
+
+/* FOOTER */
+
+footer {
+    background: var(--dark);
+    color: white;
+    padding: 45px 7%;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+.footer-logo {
+    font-family: 'Oswald', sans-serif;
+    font-size: 25px;
+}
+
+.footer-logo span {
+    color: var(--orange);
+}
+
+.footer-text {
+    color: #85867c;
+    font-size: 11px;
+    line-height: 1.8;
+    text-align: right;
+}
+
+/* ANIMATION */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: opacity .8s ease, transform .8s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes ticker {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* MOBILE */
+
+@media(max-width: 768px) {
+    .navbar {
+        padding: 22px 6%;
+    }
+
+    .nav-links {
+        gap: 13px;
+    }
+
+    .nav-links a {
+        font-size: 9px;
+    }
+
+    .nav-button {
+        padding: 8px;
+    }
+
+    .hero {
+        height: 700px;
+        padding: 120px 7%;
+        background-position: 60% center;
+    }
+
+    .hero h1 {
+        font-size: 72px;
+    }
+
+    .hero-index {
+        display: none;
+    }
+
+    .intro {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 85px 7%;
+    }
+
+    .visual-image {
+        height: 350px;
+    }
+
+    .image-caption h3 {
+        font-size: 28px;
+    }
+
+    .causes {
+        padding: 80px 7%;
+    }
+
+    .causes-header {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .causes-header h2,
+    .impact-heading h2 {
+        font-size: 43px;
+    }
+
+    .cause-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cause-card,
+    .cause-card:not(:first-child) {
+        border-right: none;
+        border-bottom: 1px solid #ffffff25;
+        padding: 25px 0;
+    }
+
+    .cause-number {
+        margin-bottom: 10px;
+    }
+
+    .impact {
+        padding: 80px 7%;
+    }
+
+    .impact-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .impact-image {
+        height: 330px;
+    }
+
+    .action {
+        padding: 80px 7%;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .footer-text {
+        text-align: left;
+    }
+}
+
+@media(max-width: 400px) {
+    .nav-links {
+        gap: 9px;
+    }
+
+    .nav-links a {
+        font-size: 8px;
+    }
+
+    .hero h1 {
+        font-size: 60px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <a href="#" class="logo">AEOK<span>.</span></a>
+
+    <nav class="nav-links">
+        <a href="#about">Tentang</a>
+        <a href="#causes">Penyebab</a>
+        <a href="#impact">Dampak</a>
+        <a href="#action" class="nav-button">Take Action ↗</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="eyebrow">
+            ENVIRONMENTAL AWARENESS CAMPAIGN
+        </div>
+
+        <h1>
+            ALL EYES<br>
+            ON <span>KARHUTLA.</span>
+        </h1>
+
+        <p class="hero-description">
+            Hutan bukan sekadar hamparan pepohonan.
+            Di dalamnya ada kehidupan, keseimbangan,
+            dan masa depan yang harus kita jaga bersama.
+        </p>
+
+        <div class="hero-actions">
+            <a href="#about" class="primary-btn">
+                EXPLORE THE ISSUE ↗
+            </a>
+
+            <a href="#action" class="text-link">
+                How to help?
+            </a>
+        </div>
+    </div>
+
+    <div class="hero-index">
+        01 — OUR FOREST, OUR FUTURE
+    </div>
+</section>
+
+<!-- RUNNING TEXT -->
+<div class="ticker">
+    <div class="ticker-track">
+        <div class="ticker-item">
+            OUR FOREST IS OUR FUTURE ✳
+        </div>
+        <div class="ticker-item">
+            STOP FOREST FIRES ✳
+        </div>
+        <div class="ticker-item">
+            PROTECT OUR EARTH ✳
+        </div>
+        <div class="ticker-item">
+            ALL EYES ON KARHUTLA ✳
+        </div>
+        <div class="ticker-item">
+            OUR FOREST IS OUR FUTURE ✳
+        </div>
+        <div class="ticker-item">
+            STOP FOREST FIRES ✳
+        </div>
+        <div class="ticker-item">
+            PROTECT OUR EARTH ✳
+        </div>
+        <div class="ticker-item">
+            ALL EYES ON KARHUTLA ✳
+        </div>
+    </div>
+</div>
+
+<!-- ABOUT -->
+<section class="intro reveal" id="about">
+    <div>
+        <div class="section-label">
+            01 / UNDERSTANDING THE ISSUE
+        </div>
+
+        <h2>
+            WHAT IS<br>
+            <span>KARHUTLA?</span>
+        </h2>
+    </div>
+
+    <div class="intro-text">
+        <p>
+            Kebakaran Hutan dan Lahan (Karhutla) adalah
+            peristiwa terbakarnya kawasan hutan maupun
+            lahan yang dapat terjadi akibat faktor alam
+            dan aktivitas manusia.
+        </p>
+
+        <p>
+            Di Indonesia, karhutla menjadi salah satu
+            permasalahan lingkungan yang perlu mendapat
+            perhatian serius karena dampaknya dapat
+            meluas hingga ke berbagai wilayah.
+        </p>
+
+        <div class="intro-note">
+            "Ketika hutan terbakar, bukan hanya pohon
+            yang kehilangan tempatnya."
+        </div>
+    </div>
+</section>
+
+<!-- VISUAL -->
+<section class="visual-section reveal">
+    <div class="visual-image">
+        <div class="image-caption">
+            <span>THE ENVIRONMENT NEEDS US</span>
+            <h3>THIS IS NOT JUST A FIRE.</h3>
+        </div>
+    </div>
+</section>
+
+<!-- CAUSES -->
+<section class="causes" id="causes">
+    <div class="causes-header reveal">
+        <div>
+            <div class="section-label">
+                02 / THE ROOT OF THE PROBLEM
+            </div>
+            <h2>WHY DOES IT<br>HAPPEN?</h2>
+        </div>
+
+        <p>
+            Memahami penyebab karhutla adalah langkah
+            awal untuk mencegah kerusakan lingkungan
+            yang lebih luas.
+        </p>
+    </div>
+
+    <div class="cause-grid reveal">
+
+        <div class="cause-card">
+            <div class="cause-number">01</div>
+            <h3>Human Activities</h3>
+            <p>
+                Pembukaan lahan dengan cara membakar,
+                pembakaran sampah, dan aktivitas manusia
+                yang tidak bertanggung jawab.
+            </p>
+        </div>
+
+        <div class="cause-card">
+            <div class="cause-number">02</div>
+            <h3>Dry Season</h3>
+            <p>
+                Musim kemarau dan kondisi vegetasi yang
+                kering membuat api lebih mudah menyebar
+                ke area sekitarnya.
+            </p>
+        </div>
+
+        <div class="cause-card">
+            <div class="cause-number">03</div>
+            <h3>Land Conditions</h3>
+            <p>
+                Lahan gambut yang mengering memiliki
+                risiko kebakaran yang tinggi dan api
+                dapat sulit dipadamkan.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- IMPACT -->
+<section class="impact" id="impact">
+
+    <div class="impact-heading reveal">
+        <div class="section-label">
+            03 / THE CONSEQUENCES
+        </div>
+        <h2>THE DAMAGE GOES BEYOND TREES.</h2>
+    </div>
+
+    <div class="impact-grid reveal">
+
+        <div class="impact-image"></div>
+
+        <div class="impact-list">
+
+            <div class="impact-item">
+                <h3>01. Air Pollution</h3>
+                <p>
+                    Asap kebakaran menghasilkan polusi udara
+                    yang dapat mengganggu kesehatan manusia.
+                </p>
+            </div>
+
+            <div class="impact-item">
+                <h3>02. Ecosystem Destruction</h3>
+                <p>
+                    Habitat satwa liar rusak dan keseimbangan
+                    ekosistem dapat terganggu.
+                </p>
+            </div>
+
+            <div class="impact-item">
+                <h3>03. Climate Impact</h3>
+                <p>
+                    Kebakaran melepaskan gas rumah kaca
+                    yang berkontribusi terhadap perubahan iklim.
+                </p>
+            </div>
+
+            <div class="impact-item">
+                <h3>04. Economic Loss</h3>
+                <p>
+                    Aktivitas masyarakat, pertanian, dan
+                    kegiatan ekonomi dapat ikut terdampak.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ACTION -->
+<section class="action" id="action">
+    <small>04 / IT STARTS WITH US</small>
+
+    <h2>
+        DON'T JUST WATCH.<br>
+        TAKE ACTION.
+    </h2>
+
+    <p>
+        Melindungi hutan bukan hanya tanggung jawab
+        pemerintah atau petugas pemadam kebakaran.
+        Kita semua memiliki peran untuk menjaga
+        lingkungan agar tetap lestari.
+    </p>
+
+    <a href="https://www.menlhk.go.id/" target="_blank">
+        LEARN & TAKE ACTION ↗
+    </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-logo">
+            ALL EYES ON <span>KARHUTLA.</span>
+        </div>
+
+        <div class="footer-text">
+            Environmental Awareness Campaign<br>
+            Protect Our Forest, Protect Our Future.<br>
+            © 2026 ALL RIGHTS RESERVED.
+        </div>
+    </div>
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.12
+    });
+
+    document.querySelectorAll('.reveal').forEach(element => {
+        observer.observe(element);
+    });
+</script>
+
+</body>
+</html>
